@@ -14,8 +14,17 @@ public class Radio {
         if (station == 9) {
              this.station = 0;
         }
-        else {
+        if(station >= 0 && station <9) {
             this.station = station + 1;
+        }
+        return station;
+    }
+    public int setPrevStation(int station){
+        if (station == 0) {
+            this.station = 9;
+        }
+        if(station>0 && station<=9) {
+            this.station = station - 1;
         }
         return station;
     }
@@ -23,11 +32,14 @@ public class Radio {
     public int getVolume(){
         return volume;
     }
-    public int setPlusVolume(int plusVolume){
-        if (plusVolume < maxVolume){
-            this.volume = plusVolume + 1;
+    public int setPlusVolume(int volume){
+        if (volume < maxVolume){
+            this.volume = volume + 1;
         }
-        if(plusVolume == maxVolume){
+        if(volume == maxVolume) {
+            this.volume = maxVolume;
+        }
+        if(volume > maxVolume){
             this.volume = maxVolume;
         }
         return volume;
