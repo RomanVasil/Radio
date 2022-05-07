@@ -15,6 +15,7 @@ class RadioTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldUseNextRadioStation9() {
         Radio nextRadioSt = new Radio();
