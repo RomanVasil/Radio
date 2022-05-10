@@ -5,7 +5,7 @@ public class Radio {
     private int maxVolume = 10;
     private int minVolume = 0;
     private int volume;
-   // private boolean on;
+    // private boolean on;
 
     public int getStation() {
         return station;
@@ -19,7 +19,7 @@ public class Radio {
         if (newStation >= 0 && newStation < 9) {
             this.station = newStation + 1;
         }
-        if (newStation > 9){
+        if (newStation > 9) {
             this.station = 0;
         }
 
@@ -34,7 +34,7 @@ public class Radio {
         if (newStation > 0 && newStation <= 9) {
             this.station = newStation - 1;
         }
-        if (newStation < 0){
+        if (newStation < 0) {
             this.station = 0;
         }
         return station;
