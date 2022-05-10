@@ -16,8 +16,11 @@ public class Radio {
         if (newStation == 9) {
             this.station = 0;
         }
-        if (newStation >= 0 && newStation < 9) {
-            this.station = newStation + 1;
+        if (newStation < 9) {
+
+           // if (newStation >= 0) {
+                this.station = newStation + 1;
+            //}
         }
         if (newStation > 9) {
             this.station = 0;
@@ -31,7 +34,8 @@ public class Radio {
         if (newStation == 0) {
             this.station = 9;
         }
-        if (newStation > 0 && newStation <= 9) {
+        //if (newStation > 0 && newStation <= 9) {
+        if (newStation > 0) {
             this.station = newStation - 1;
         }
         if (newStation < 0) {
@@ -60,7 +64,8 @@ public class Radio {
 
     public int setMinusVolume(int newVolume) {
         volume = newVolume;
-        if (newVolume < maxVolume && newVolume > minVolume) {
+       // if (newVolume < maxVolume && newVolume > minVolume) {
+        if (newVolume > minVolume) {
             this.volume = newVolume - 1;
         }
         if (newVolume == minVolume) {
