@@ -11,70 +11,67 @@ public class Radio {
         return station;
     }
 
-    public int setStation(int newStation) {
+    public void setStation(int newStation) {
         station = newStation;
-        if (newStation == 9) {
-            this.station = 0;
-        }
-        if (newStation < 9) {
-
-           // if (newStation >= 0) {
-                this.station = newStation + 1;
-            //}
-        }
-        if (newStation > 9) {
-            this.station = 0;
-        }
-
-        return station;
     }
 
-    public int setPrevStation(int newStation) {
-        station = newStation;
-        if (newStation == 0) {
-            this.station = 9;
+    public void nextStation() {
+        if (station == 9) {
+            station = 0;
+            return;
         }
-        //if (newStation > 0 && newStation <= 9) {
-        if (newStation > 0) {
-            this.station = newStation - 1;
+        if (station < 9) {
+            station = station + 1;
         }
-        if (newStation < 0) {
-            this.station = 0;
+        if (station > 9) {
+            station = 0;
+
         }
-        return station;
+    }
+
+    public void prevStation() {
+        if (station == 0) {
+            station = 9;
+            return;
+        }
+        if (station > 0) {
+            station = station - 1;
+        }
+        if (station < 0) {
+            station = 0;
+        }
     }
 
     public int getVolume() {
         return volume;
     }
 
-    public int setPlusVolume(int newVolume) {
+    public void setVolume(int newVolume) {
         volume = newVolume;
-        if (newVolume < maxVolume) {
-            this.volume = volume + 1;
-        }
-        if (newVolume == maxVolume) {
-            this.volume = maxVolume;
-        }
-        if (newVolume > maxVolume) {
-            this.volume = maxVolume;
-        }
-        return volume;
     }
 
-    public int setMinusVolume(int newVolume) {
-        volume = newVolume;
-       // if (newVolume < maxVolume && newVolume > minVolume) {
-        if (newVolume > minVolume) {
-            this.volume = newVolume - 1;
+    public void plusVolume() {
+        if (volume < maxVolume) {
+            volume = volume + 1;
         }
-        if (newVolume == minVolume) {
-            this.volume = minVolume;
+        if (volume == maxVolume) {
+            volume = maxVolume;
         }
-        if (newVolume < minVolume) {
-            this.volume = minVolume;
+        if (volume > maxVolume) {
+            volume = maxVolume;
         }
-        return volume;
+    }
+
+    public void minusVolume() {
+        if (volume > minVolume) {
+            volume = volume - 1;
+        }
+        if (volume == minVolume) {
+            volume = minVolume;
+        }
+        if (volume < minVolume) {
+            volume = minVolume;
+        }
     }
 }
 

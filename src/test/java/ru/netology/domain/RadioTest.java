@@ -4,12 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RadioTest {
+public class RadioTest {
 
     @Test
     public void shouldUseNextRadioStation8() {
         Radio nextRadioSt = new Radio();
+
         nextRadioSt.setStation(8);
+        nextRadioSt.nextStation();
         int expected = 9;
         int actual = nextRadioSt.getStation();
 
@@ -20,6 +22,7 @@ class RadioTest {
     public void shouldUseNextRadioStation9() {
         Radio nextRadioSt = new Radio();
         nextRadioSt.setStation(9);
+        nextRadioSt.nextStation();
         int expected = 0;
         int actual = nextRadioSt.getStation();
 
@@ -30,6 +33,7 @@ class RadioTest {
     public void shouldUseNextRadioStation10() {
         Radio nextRadioSt = new Radio();
         nextRadioSt.setStation(10);
+        nextRadioSt.nextStation();
         int expected = 0;
         int actual = nextRadioSt.getStation();
 
@@ -39,8 +43,10 @@ class RadioTest {
     @Test
     public void shouldUsePrevRadioStation() {
         Radio prevRadioSt = new Radio();
-        prevRadioSt.setPrevStation(1);
+        prevRadioSt.setStation(1);
+        prevRadioSt.prevStation();
         int expected = 0;
+
         int actual = prevRadioSt.getStation();
 
         assertEquals(expected, actual);
@@ -49,7 +55,8 @@ class RadioTest {
     @Test
     public void shouldUsePrevRadioStation0() {
         Radio prevRadioSt = new Radio();
-        prevRadioSt.setPrevStation(0);
+        prevRadioSt.setStation(0);
+        prevRadioSt.prevStation();
         int expected = 9;
         int actual = prevRadioSt.getStation();
 
@@ -59,7 +66,8 @@ class RadioTest {
     @Test
     public void shouldUsePrevRadioStationMin1() {
         Radio prevRadioSt = new Radio();
-        prevRadioSt.setPrevStation(-1);
+        prevRadioSt.setStation(-1);
+        prevRadioSt.prevStation();
         int expected = 0;
         int actual = prevRadioSt.getStation();
 
@@ -69,7 +77,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioPlusVolume9() {
         Radio radioPlusVol = new Radio();
-        radioPlusVol.setPlusVolume(9);
+        radioPlusVol.setVolume(9);
+        radioPlusVol.plusVolume();
         int expected = 10;
         int actual = radioPlusVol.getVolume();
 
@@ -79,7 +88,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioPlusVolume10() {
         Radio radioPlusVol = new Radio();
-        radioPlusVol.setPlusVolume(10);
+        radioPlusVol.setVolume(10);
+        radioPlusVol.plusVolume();
         int expected = 10;
         int actual = radioPlusVol.getVolume();
 
@@ -89,7 +99,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioPlusVolume11() {
         Radio radioPlusVol = new Radio();
-        radioPlusVol.setPlusVolume(11);
+        radioPlusVol.setVolume(11);
+        radioPlusVol.plusVolume();
         int expected = 10;
         int actual = radioPlusVol.getVolume();
 
@@ -99,7 +110,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioMinusVolume1() {
         Radio radioMinusVol = new Radio();
-        radioMinusVol.setMinusVolume(1);
+        radioMinusVol.setVolume(1);
+        radioMinusVol.minusVolume();
         int expected = 0;
         int actual = radioMinusVol.getVolume();
 
@@ -109,7 +121,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioMinusVolume0() {
         Radio radioMinusVol = new Radio();
-        radioMinusVol.setMinusVolume(0);
+        radioMinusVol.setVolume(0);
+        radioMinusVol.minusVolume();
         int expected = 0;
         int actual = radioMinusVol.getVolume();
 
@@ -119,7 +132,8 @@ class RadioTest {
     @Test
     public void shouldUseRadioMinusVolumeMin1() {
         Radio radioMinusVol = new Radio();
-        radioMinusVol.setMinusVolume(-1);
+        radioMinusVol.setVolume(-1);
+        radioMinusVol.minusVolume();
         int expected = 0;
         int actual = radioMinusVol.getVolume();
 
