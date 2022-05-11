@@ -41,7 +41,19 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldUsePrevRadioStation() {
+    public void shouldUseNextRadioStation0() {
+        Radio nextRadioSt = new Radio();
+
+        nextRadioSt.setStation(0);
+        nextRadioSt.nextStation();
+        int expected = 1;
+        int actual = nextRadioSt.getStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldUsePrevRadioStation1() {
         Radio prevRadioSt = new Radio();
         prevRadioSt.setStation(1);
         prevRadioSt.prevStation();
@@ -68,7 +80,19 @@ public class RadioTest {
         Radio prevRadioSt = new Radio();
         prevRadioSt.setStation(-1);
         prevRadioSt.prevStation();
-        int expected = 0;
+        int expected = 9;
+        int actual = prevRadioSt.getStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldUsePrevRadioStation9() {
+        Radio prevRadioSt = new Radio();
+        prevRadioSt.setStation(9);
+        prevRadioSt.prevStation();
+        int expected = 8;
+
         int actual = prevRadioSt.getStation();
 
         assertEquals(expected, actual);
@@ -108,6 +132,17 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldUseRadioPlusVolume0() {
+        Radio radioPlusVol = new Radio();
+        radioPlusVol.setVolume(0);
+        radioPlusVol.plusVolume();
+        int expected = 1;
+        int actual = radioPlusVol.getVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldUseRadioMinusVolume1() {
         Radio radioMinusVol = new Radio();
         radioMinusVol.setVolume(1);
@@ -135,6 +170,17 @@ public class RadioTest {
         radioMinusVol.setVolume(-1);
         radioMinusVol.minusVolume();
         int expected = 0;
+        int actual = radioMinusVol.getVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldUseRadioMinusVolume10() {
+        Radio radioMinusVol = new Radio();
+        radioMinusVol.setVolume(10);
+        radioMinusVol.minusVolume();
+        int expected = 9;
         int actual = radioMinusVol.getVolume();
 
         assertEquals(expected, actual);
