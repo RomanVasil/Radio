@@ -12,36 +12,40 @@ public class Radio {
     }
 
     public void setStation(int newStation) {
+        if (newStation > 9) {
+            return;
+        }
+        if (newStation < 0) {
+            return;
+        }
         station = newStation;
-        return;
     }
 
     public void nextStation() {
-        if (station >= 9) {
+
+
+        if (station == 9) {
             station = 0;
             return;
         }
-        if (station >= 0) {
+        if (station < 9) {
             station = station + 1;
-            // return;
+//            return;
         }
-        if (station < 0) {
-            station = 0;
-        }
-        return;
+
     }
 
     public void prevStation() {
-        if (station <= 0) {
+        if (station == 0) {
             station = 9;
             return;
         }
-        if (station <= 9) {
+        if (station > 0) {
             station = station - 1;
         }
-        if (station > 9) {
-            station = 0;
-        }
+//        if (station > 9) {
+//            station = 0;
+//        }
         return;
     }
 
@@ -50,12 +54,18 @@ public class Radio {
     }
 
     public void setVolume(int newVolume) {
+        if (newVolume > maxVolume) {
+            return;
+        }
+        if (newVolume < minVolume) {
+            return;
+        }
         volume = newVolume;
-        return;
+
     }
 
     public void plusVolume() {
-        if (volume >= maxVolume) {
+        if (volume == maxVolume) {
             volume = maxVolume;
             return;
         }
@@ -63,15 +73,11 @@ public class Radio {
             volume = volume + 1;
             // return;
         }
-        if (volume < minVolume) {
-            volume = 0;
-            // return;
-        }
-        return;
+
     }
 
     public void minusVolume() {
-        if (volume <= minVolume) {
+        if (volume == minVolume) {
             volume = minVolume;
             return;
         }
@@ -79,11 +85,7 @@ public class Radio {
             volume = volume - 1;
             // return;
         }
-        if (volume > maxVolume) {
-            volume = maxVolume;
-            //return;
-        }
-        return;
     }
+
 }
 
