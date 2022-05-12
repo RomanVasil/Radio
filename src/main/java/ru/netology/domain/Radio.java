@@ -22,6 +22,10 @@ public class Radio {
         }
         if (station >= 0) {
             station = station + 1;
+            // return;
+        }
+        if (station < 0) {
+            station = 0;
 
         }
         return;
@@ -34,7 +38,10 @@ public class Radio {
         }
         if (station <= 9) {
             station = station - 1;
-
+            //  return;
+        }
+        if (station > 9) {
+            station = 0;
         }
         return;
     }
@@ -48,25 +55,38 @@ public class Radio {
     }
 
     public void plusVolume() {
-        if (volume < maxVolume) {
-            volume = volume + 1;
-            return;
-        }
         if (volume >= maxVolume) {
             volume = maxVolume;
+            return;
         }
+        if (volume >= minVolume) {
+            volume = volume + 1;
+           // return;
+        }
+        if (volume < minVolume) {
+            volume = 0;
+           // return;
+        }
+
         return;
 
     }
 
     public void minusVolume() {
-        if (volume > minVolume) {
-            volume = volume - 1;
-            return;
-        }
         if (volume <= minVolume) {
             volume = minVolume;
+            return;
         }
+        if (volume <= maxVolume) {
+            volume = volume - 1;
+            // return;
+        }
+        if (volume > maxVolume) {
+            volume = maxVolume;
+            //return;
+        }
+
+
         return;
     }
 }
