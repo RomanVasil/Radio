@@ -13,6 +13,7 @@ public class Radio {
 
     public void setStation(int newStation) {
         station = newStation;
+        return;
     }
 
     public void nextStation() {
@@ -26,7 +27,6 @@ public class Radio {
         }
         if (station < 0) {
             station = 0;
-
         }
         return;
     }
@@ -52,6 +52,7 @@ public class Radio {
 
     public void setVolume(int newVolume) {
         volume = newVolume;
+        return;
     }
 
     public void plusVolume() {
@@ -61,15 +62,13 @@ public class Radio {
         }
         if (volume >= minVolume) {
             volume = volume + 1;
-           // return;
+            // return;
         }
         if (volume < minVolume) {
             volume = 0;
-           // return;
+            // return;
         }
-
         return;
-
     }
 
     public void minusVolume() {
@@ -85,8 +84,6 @@ public class Radio {
             volume = maxVolume;
             //return;
         }
-
-
         return;
     }
 }
