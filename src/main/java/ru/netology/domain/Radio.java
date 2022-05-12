@@ -22,31 +22,21 @@ public class Radio {
     }
 
     public void nextStation() {
-
-
         if (station == 9) {
             station = 0;
-            return;
         }
-        if (station < 9) {
+        else {
             station = station + 1;
-//            return;
         }
-
     }
 
     public void prevStation() {
         if (station == 0) {
             station = 9;
-            return;
         }
-        if (station > 0) {
+        else {
             station = station - 1;
         }
-//        if (station > 9) {
-//            station = 0;
-//        }
-        return;
     }
 
     public int getVolume() {
@@ -67,11 +57,9 @@ public class Radio {
     public void plusVolume() {
         if (volume == maxVolume) {
             volume = maxVolume;
-            return;
         }
-        if (volume >= minVolume) {
+        else  {
             volume = volume + 1;
-            // return;
         }
 
     }
@@ -79,11 +67,9 @@ public class Radio {
     public void minusVolume() {
         if (volume == minVolume) {
             volume = minVolume;
-            return;
         }
-        if (volume <= maxVolume) {
+        else  {
             volume = volume - 1;
-            // return;
         }
     }
 
