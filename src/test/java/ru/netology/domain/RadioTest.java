@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
-// след станция
+    // след станция
     @Test
     public void shouldUseNextRadioStation8() {
         Radio nextRadioSt = new Radio();
@@ -51,7 +51,8 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
-// предыд станция
+
+    // предыд станция
     @Test
     public void shouldUsePrevRadioStation1() {
         Radio prevRadioSt = new Radio();
@@ -96,17 +97,18 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
-// увелич громк
-//    @Test
-//    public void shouldUseRadioPlusVolumeMinus1() {
-//        Radio radioPlusVol = new Radio();
-//        radioPlusVol.setVolume(-1);
-//      // radioPlusVol.plusVolume();
-//        int expected = 0;
-//        int actual = radioPlusVol.getVolume();
-//
-//        assertEquals(expected, actual);
-//    }
+
+    // увелич громк
+    @Test
+    public void shouldUseRadioPlusVolumeMinus1() {
+        Radio radioPlusVol = new Radio();
+        radioPlusVol.setVolume(-1);
+        // radioPlusVol.plusVolume();
+        int expected = 0;
+        int actual = radioPlusVol.getVolume();
+
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldUseRadioPlusVolume9() {
@@ -134,14 +136,14 @@ public class RadioTest {
     public void shouldUseRadioPlusVolume11() {
         Radio radioPlusVol = new Radio();
         radioPlusVol.setVolume(11);
-       //radioPlusVol.plusVolume();
+        //radioPlusVol.plusVolume();
         int expected = 0;
         int actual = radioPlusVol.getVolume();
 
         assertEquals(expected, actual);
     }
 
-// уменьш громкости
+    // уменьш громкости
     @Test
     public void shouldUseRadioMinusVolume1() {
         Radio radioMinusVol = new Radio();
@@ -168,7 +170,7 @@ public class RadioTest {
     public void shouldUseRadioMinusVolumeMin1() {
         Radio radioMinusVol = new Radio();
         radioMinusVol.setVolume(-1);
-       // radioMinusVol.minusVolume();
+        // radioMinusVol.minusVolume();
         int expected = 0;
         int actual = radioMinusVol.getVolume();
 
@@ -179,33 +181,13 @@ public class RadioTest {
     public void shouldUseRadioMinusVolume11() {
         Radio radioMinusVol = new Radio();
         radioMinusVol.setVolume(11);
-       // radioMinusVol.minusVolume();
+        // radioMinusVol.minusVolume();
         int expected = 0;
         int actual = radioMinusVol.getVolume();
 
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldUseRadioMinusVolume10() {
-        Radio radioMinusVol = new Radio();
-        radioMinusVol.setVolume(10);
-        radioMinusVol.minusVolume();
-        int expected = 9;
-        int actual = radioMinusVol.getVolume();
-
-        assertEquals(expected, actual);
-    }
-    @Test
-    public void shouldUseRadioMinusVolume9() {
-        Radio radioMinusVol = new Radio();
-        radioMinusVol.setVolume(9);
-        radioMinusVol.minusVolume();
-        int expected = 8;
-        int actual = radioMinusVol.getVolume();
-
-        assertEquals(expected, actual);
-    }
 
 }
 
